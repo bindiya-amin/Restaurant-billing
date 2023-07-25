@@ -88,13 +88,13 @@ printf("\t\t\t\t\t\t\t\tVeg & Nonveg Restaurant\n \t\t\t\t\t\t\t\t\tMangalore");
         system("clear");
         printf("\nPlease enter the name of the customer:\t");
         fgets(ord.customer,50,stdin);                            //This line reads a string of characters from the standard input stream stdin (i.e., the console), up to a maximum of 50 characters, and stores it in the ord.customer array. The fgets function reads characters until it encounters a newline character or the maximum number of characters specified, whichever comes first.
-        ord.customer[strlen(ord.customer)-1] = 0;            //***
+        ord.customer[strlen(ord.customer)-1] = 0;            //modifies a string by removing its last character
         strcpy(ord.date,__DATE__);                           //This line copies the current date and time (represented as a string) to the ord.date array. The __DATE__ macro is a predefined macro in C that expands to a string representing the date on which the program was compiled.
         printf("\nPlease enter the number of items:\t");
         scanf("%d",&n);
         ord.numOfItems = n;                                     //This line assigns the value of n to the numOfItems member of the ord struct, which represents the number of items in the order.
         for(int i=0;i<n;i++){                              // loop iterates upto n items to collect name, quantity and price of each item
-            fgetc(stdin);                                  //***
+            fgetc(stdin);                                 
             printf("\n\n");
             printf("Please enter the item %d:\t",i+1);    //enter 1st item ==> 0+1=1
             fgets(ord.itm[i].item,20,stdin);               //This line reads a string of characters from the standard input stream, representing the name of the current item, and stores it in the item member of the i-th element of the itm array in the ord struct. 
